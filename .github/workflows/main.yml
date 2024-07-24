@@ -26,6 +26,7 @@ jobs:
       - name: Create and update .env file
         run: |
           echo "DEEPGRAM_API_KEY=${{ secrets.DEEPGRAM_API_KEY }}" >> .env
+          echo "PORT=${{ secrets.PORT }}" >> .env
         working-directory: .
 
       - name: Build Docker image
