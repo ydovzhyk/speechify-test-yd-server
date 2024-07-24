@@ -1,13 +1,12 @@
-import "dotenv/config";
-import express from "express";
-import cors from "cors";
-import http from "http";
-import path from "path";
-import initializeWebSocket from "./websocket.js";
-import { Server } from "socket.io";
+const http = require("http");
+const { Server } = require("socket.io");
+const app = require("./app");
+const initializeWebSocket = require("./websocket.js");
+require("dotenv").config();
 
-const app = express();
-const server = http.Server(app);
+const { PORT = 8080 } = process.env;
+
+const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: "*",
@@ -16,21 +15,6 @@ const io = new Server(server, {
 });
 
 initializeWebSocket(io);
-
-app.use(cors({ credentials: false, origin: "*" }));
-app.use(express.json());
-
-const staticPath = path.resolve("public/");
-app.use(express.static(staticPath));
-
-app.get("*", (req, res, next) => {
-  if (req.path.startsWith("/api/")) {
-    return next();
-  }
-  res.sendFile(path.join(staticPath, "index.html"));
-});
-
-const PORT = process.env.PORT || 8080;
 
 server.listen(PORT, () => {
   console.log(`Server listening at http://localhost:${PORT}`);

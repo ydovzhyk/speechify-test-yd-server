@@ -1,35 +1,40 @@
 {
-  "name": "speechify-test-yd-server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "dev": "nodemon server.js",
-    "start": "node server.js",
-    "test": "jest --forceExit"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@azure/openai": "^1.0.0-beta.12",
-    "@deepgram/sdk": "^3.1.3",
-    "axios": "^1.6.8",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.1",
-    "express": "^4.18.2",
-    "socket.io": "^4.7.4",
-    "socket.io-client": "^4.7.5"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.24.4",
-    "@babel/preset-env": "^7.24.4",
-    "babel-jest": "^29.7.0",
-    "jest": "^29.7.0",
-    "jest-junit": "^16.0.0",
-    "nodemon": "^3.1.0",
-    "supertest": "^6.3.4",
-    "wav": "^1.0.2"
-  }
+    "name": "speechify-test-yd-server",
+    "version": "1.0.0",
+    "description": "Test task",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "cross-env NODE_ENV=production node ./server.js",
+        "start:dev": "cross-env NODE_ENV=development nodemon ./server.js",
+        "lint": "eslint **/*.js",
+        "lint:fix": "eslint --fix **/*.js"
+    },
+    "dependencies": {
+        "@azure/openai": "^1.0.0-beta.12",
+        "@deepgram/sdk": "^3.1.3",
+        "axios": "^1.6.8",
+        "cors": "2.8.5",
+        "cross-env": "7.0.3",
+        "dotenv": "^16.0.3",
+        "express": "^4.17.1",
+        "express-session": "^1.17.3",
+        "morgan": "1.10.0",
+        "multer": "^1.4.5-lts.1",
+        "rimraf": "^6.0.1",
+        "socket.io": "^4.7.4",
+        "socket.io-client": "^4.7.5"
+    },
+    "devDependencies": {
+        "eslint": "7.19.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-config-standard": "16.0.3",
+        "eslint-plugin-import": "2.25.3",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "5.2.0",
+        "nodemon": "2.0.15"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
 }

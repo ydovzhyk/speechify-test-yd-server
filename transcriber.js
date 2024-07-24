@@ -1,5 +1,5 @@
-import EventEmitter from "events";
-import { createClient, LiveTranscriptionEvents } from "@deepgram/sdk";
+const EventEmitter = require("events");
+const { createClient, LiveTranscriptionEvents } = require("@deepgram/sdk");
 
 class Transcriber extends EventEmitter {
   constructor() {
@@ -89,4 +89,4 @@ class Transcriber extends EventEmitter {
   }
 }
 
-export default Transcriber;
+module.exports = Transcriber;

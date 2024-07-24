@@ -1,4 +1,4 @@
-import Transcriber from "./transcriber.js";
+const Transcriber = require("./transcriber.js");
 
 const initializeWebSocket = (io) => {
   io.on("connection", async (socket) => {
@@ -40,4 +40,4 @@ const initializeWebSocket = (io) => {
   return io;
 };
 
-export default initializeWebSocket;
+module.exports = initializeWebSocket;
