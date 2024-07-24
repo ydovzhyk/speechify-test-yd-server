@@ -2,6 +2,7 @@ const http = require("http");
 const { Server } = require("socket.io");
 const app = require("./app");
 const initializeWebSocket = require("./websocket.js");
+
 require("dotenv").config();
 
 const { PORT = 8080 } = process.env;
