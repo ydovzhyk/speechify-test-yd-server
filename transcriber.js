@@ -1,4 +1,5 @@
 const EventEmitter = require("events");
+
 const { createClient, LiveTranscriptionEvents } = require("@deepgram/sdk");
 
 class Transcriber extends EventEmitter {
