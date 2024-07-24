@@ -6,8 +6,6 @@ import path from "path";
 import initializeWebSocket from "./websocket.js";
 import { Server } from "socket.io";
 
-// No need to edit any of this code
-
 const app = express();
 const server = http.Server(app);
 const io = new Server(server, {
