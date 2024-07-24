@@ -4,4 +4,4 @@ services:
   app:
     image: yuriydovzhyk/speechify-test-yd-server
     ports:
-      - "4000:4000"
+      - "8080:8080"
